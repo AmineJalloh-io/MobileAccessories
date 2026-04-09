@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>MPPA SL-Ltd | Mobile Phones & Accessories</title>
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: modern sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f5f7fc;
+      color: #1e293b;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .top-navbar {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 0;
+      border-bottom: 2px solid #facc15;
+    }
+
+    .navbar-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-area h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #facc15, #ffb347);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-area span {
+      font-size: 0.8rem;
+      display: block;
+      color: #cbd5e1;
+      letter-spacing: 0.5px;
+    }
+
+    .datetime {
+      background: #1e293b;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      font-family: monospace;
+      box-shadow: inset 0 0 0 1px #334155;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: 600;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #facc15;
+    }
+
+    .banner-section {
+      margin: 40px 0 30px 0;
+    }
+
+    .animated-banner {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .banner-card {
+      background: #fff;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      flex: 1;
+      min-width: 240px;
+      animation: floatGlow 3s infinite ease-in-out;
+    }
+
+    .banner-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-card:hover {
+      transform: translateY(-8px);
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.05);}
+      50% { transform: translateY(-6px); box-shadow: 0 20px 28px rgba(0,0,0,0.12);}
+      100% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.05);}
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      border-left: 6px solid #facc15;
+      padding-left: 20px;
+    }
+
+    .accessories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .accessory-item {
+      background: white;
+      border-radius: 28px;
+      padding: 20px 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      transition: all 0.2s;
+      border: 1px solid #e9eef3;
+    }
+    .accessory-item i {
+      font-size: 3rem;
+      color: #facc15;
+      margin-bottom: 12px;
+    }
+    .accessory-item h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .video-payment-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .video-col {
+      flex: 1.2;
+      min-width: 260px;
+    }
+    .payment-col {
+      flex: 1;
+      min-width: 320px;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 24px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      border: 1px solid #eef2ff;
+    }
+    .short-video {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      background: #000;
+    }
+
+    .payment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #1e293b;
+    }
+    .form-group label .required {
+      color: #dc2626;
+      margin-left: 4px;
+    }
+    .form-group input {
+      padding: 12px 14px;
+      border-radius: 60px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: #facc15;
+      box-shadow: 0 0 0 2px #facc1540;
+    }
+    .btn-submit {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover {
+      background: #facc15;
+      color: #0f172a;
+    }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-feedback {
+      font-size: 0.8rem;
+      margin-top: 8px;
+      padding: 8px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .form-feedback.success {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .form-feedback.error {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .form-feedback.info {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    footer {
+      background: #0a0f1c;
+      color: #e2e8f0;
+      margin-top: 60px;
+      padding: 40px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #facc15;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    .social-icons a {
+      color: #cbd5e1;
+      font-size: 1.6rem;
+      margin-right: 15px;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #facc15;
+      transform: scale(1.1);
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+    .contact-info i {
+      margin-right: 10px;
+      color: #facc15;
+    }
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .subscribe-form input {
+      padding: 12px;
+      border-radius: 60px;
+      border: none;
+      background: #1e293b;
+      color: white;
+    }
+    .subscribe-form button {
+      background: #facc15;
+      border: none;
+      padding: 10px;
+      border-radius: 60px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    hr {
+      margin: 30px 0 20px;
+      border-color: #2d3a5e;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 800px) {
+      .navbar-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-navbar">
+  <div class="container">
+    <div class="navbar-flex">
+      <div class="logo-area">
+        <h1>MPPA</h1>
+        <span>SL-Ltd · Mobile & Accessories Hub</span>
+      </div>
+      <div class="datetime" id="liveDateTime"></div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Promos</a></li>
+        <li><a href="#">Sales</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <div class="banner-section">
+    <div class="animated-banner">
+      <div class="banner-card">
+        <img src="https://placehold.co/600x400/1e293b/facc15?text=Samsung+Galaxy+A06" alt="Samsung Galaxy A06">
+        <div style="padding: 12px; text-align:center; font-weight:bold;">✨ Galaxy A06 ✨</div>
+      </div>
+      <div class="banner-card">
+        <img src="https://placehold.co/600x400/0f172a/facc15?text=Samsung+Galaxy+A07" alt="Samsung Galaxy A07">
+        <div style="padding: 12px; text-align:center; font-weight:bold;">🔥 Galaxy A07 🔥</div>
+      </div>
+      <div class="banner-card">
+        <img src="https://placehold.co/600x400/1e293b/facc15?text=Samsung+Galaxy+A19" alt="Samsung Galaxy A19">
+        <div style="padding: 12px; text-align:center; font-weight:bold;">💎 Galaxy A19 💎</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="section-title">⚡ Premium Accessories ⚡</h2>
+    <div class="accessories-grid">
+      <div class="accessory-item"><i class="fas fa-headphones"></i><h3>Earphone</h3><p>Bass boosted</p></div>
+      <div class="accessory-item"><i class="fas fa-bluetooth-b"></i><h3>Airbods</h3><p>Wireless freedom</p></div>
+      <div class="accessory-item"><i class="fas fa-battery-full"></i><h3>Batteries</h3><p>Long lasting</p></div>
+      <div class="accessory-item"><i class="fas fa-plug"></i><h3>Phone Chargers</h3><p>Fast charging</p></div>
+      <div class="accessory-item"><i class="fas fa-charging-station"></i><h3>Power Banks</h3><p>20,000 mAh</p></div>
+    </div>
+  </div>
+
+  <div class="video-payment-row">
+    <div class="video-col">
+      <h3><i class="fas fa-play-circle" style="color:#facc15;"></i> Short Promo Video</h3>
+      <video class="short-video" controls autoplay muted loop>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 12px; font-size:0.85rem;">🎬 Experience the future of mobile tech – MPPA exclusive deals!</p>
+    </div>
+
+    <div class="payment-col">
+      <h3>💳 Secure Payment</h3>
+      <form class="payment-form" id="paymentForm">
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="Full Name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label>ID Number <span class="required">*</span></label>
+          <input type="text" name="ID Number" placeholder="NID / Passport No." required>
+        </div>
+        <div class="form-group">
+          <label>Product Name <span class="required">*</span></label>
+          <input type="text" name="Product Name" placeholder="e.g., Galaxy A07, Airbods Pro" required>
+        </div>
+        <div class="form-group">
+          <label>Amount (Le or USD)</label>
+          <input type="number" name="Amount" id="amountInput" placeholder="0.00" step="any" required>
+        </div>
+        <div class="form-group">
+          <label>Total Sum (Le/USD)</label>
+          <input type="number" name="Total Sum" id="totalSumInput" placeholder="Total" step="any" readonly style="background:#f1f5f9;">
+        </div>
+        <div class="form-group">
+          <label>Payment Number<span class="required">*</span></label>
+          <input type="tel" name="Mobile Money Number" placeholder="+232-73-671-566" readonly>
+        </div>
+        <div class="form-group">
+          <label>Payment ID Number <span class="required">*</span></label>
+          <input type="text" name="Payment ID Number" placeholder="TRX / Reference ID" required>
+        </div>
+        <div class="form-group">
+          <label>Signature <span class="required">*</span></label>
+          <input type="text" name="Signature" placeholder="Digital signature / full name" required>
+        </div>
+        
+        <button type="submit" class="btn-submit" id="submitBtn"><i class="fas fa-lock"></i> Submit Payment</button>
+        <div id="formFeedback" class="form-feedback"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-share-alt"></i> Connect</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="contact-info" style="margin-top: 20px;">
+          <p><i class="fas fa-phone-alt"></i> +232 76 888 111</p>
+          <p><i class="fas fa-phone-alt"></i> +232 77 999 222</p>
+          <p><i class="fas fa-envelope"></i> support@mppa-sl.com</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Updates</h4>
+        <p><i class="fas fa-tag"></i> Promos: Up to 40% off</p>
+        <p><i class="fas fa-calendar-alt"></i> Events: Tech Fest Dec 12</p>
+        <p><i class="fas fa-gavel"></i> Auctions: Refurbished flagships</p>
+      </div>
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <form class="subscribe-form" id="subscribeForm">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit"><i class="fas fa-bell"></i> Get promos</button>
+        </form>
+        <p style="font-size: 0.7rem; margin-top: 12px;">Get early access to sales & auctions</p>
+      </div>
+    </div>
+    <hr>
+    <div class="copyright">
+      <p>© 2025 MPPA SL-Ltd – All rights reserved. Quality Phones & Accessories.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Live Date & Time
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const formatted = now.toLocaleDateString(undefined, options);
+    const dateTimeElem = document.getElementById('liveDateTime');
+    if (dateTimeElem) dateTimeElem.innerText = `📅 ${formatted}`;
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+  // Auto calculate Total Sum
+  const amountInput = document.getElementById('amountInput');
+  const totalSumInput = document.getElementById('totalSumInput');
+  if (amountInput && totalSumInput) {
+    function syncTotal() {
+      let val = parseFloat(amountInput.value);
+      if (isNaN(val)) val = 0;
+      totalSumInput.value = val.toFixed(2);
+    }
+    amountInput.addEventListener('input', syncTotal);
+    syncTotal();
+  }
+
+  // IMPORTANT: REPLACE THIS WITH YOUR OWN FORMSPREE ENDPOINT
+  // Go to https://formspree.io/ to get your free endpoint
+  // It will look like: https://formspree.io/f/your-unique-id
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojpznbv';
+  
+  // Alternative: Use FormSubmit.co as backup (no account needed)
+  // const FORMSPREE_ENDPOINT = 'https://formsubmit.co/ajax/your-email@example.com';
+  
+  const paymentForm = document.getElementById('paymentForm');
+  const formFeedback = document.getElementById('formFeedback');
+  const submitBtn = document.getElementById('submitBtn');
+
+  if (paymentForm) {
+    paymentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+      formFeedback.innerHTML = 'Submitting payment information...';
+      formFeedback.className = 'form-feedback info';
+      
+      const formData = new FormData(paymentForm);
+      formData.append('_subject', 'New Order from MPPA SL-Ltd Website');
+      
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          formFeedback.innerHTML = '✅ Payment request submitted successfully! We will contact you within 24 hours to confirm your order. Thank you for choosing MPPA SL-Ltd!';
+          formFeedback.className = 'form-feedback success';
+          paymentForm.reset();
+          if (totalSumInput) totalSumInput.value = "0.00";
+          if (amountInput) amountInput.value = "";
+        } else {
+          const errorData = await response.json();
+          console.error('Formspree error:', errorData);
+          formFeedback.innerHTML = `❌ Submission failed: ${errorData.error || "Please try again or contact us via WhatsApp: +232 76 888 111"}`;
+          formFeedback.className = 'form-feedback error';
+        }
+      } catch (err) {
+        console.error('Network error:', err);
+        formFeedback.innerHTML = '⚠️ Network error. Please check your connection and try again. You can also contact us directly at +232 76 888 111';
+        formFeedback.className = 'form-feedback error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-lock"></i> Submit Payment';
+      }
+    });
+  }
+
+  // Subscribe form
+  const subscribeForm = document.getElementById('subscribeForm');
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = subscribeForm.querySelector('input[type="email"]');
+      const email = emailInput.value;
+      
+      if (!email) return;
+      
+      const submitButton = subscribeForm.querySelector('button');
+      const originalText = submitButton.innerHTML;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+      submitButton.disabled = true;
+      
+      try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('_subject', 'Newsletter Subscription - MPPA');
+        
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          alert('🎉 Subscribed successfully! Stay tuned for amazing MPPA promos!');
+          subscribeForm.reset();
+        } else {
+          alert('❌ Subscription failed. Please try again or contact us directly.');
+        }
+      } catch (err) {
+        alert('⚠️ Network error. Please contact us via phone: +232 76 888 111');
+      } finally {
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>
+</body>
+</html>
